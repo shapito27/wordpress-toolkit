@@ -1,0 +1,9 @@
+{
+  "input": {
+    "url": "https://northwind-bakery.com"
+  },
+  "output": "```json\n{\n  \"url\": \"https://northwind-bakery.com/\",\n  \"is_wordpress\": true,\n  \"theme\": {\n    \"name\": \"Astra\",\n    \"slug\": \"astra\",\n    \"author\": \"Brainstorm Force\",\n    \"is_child\": false,\n    \"is_custom\": false,\n    \"price\": \"free\"\n  },\n  \"plugins\": [\n    {\n      \"name\": \"Elementor\",\n      \"slug\": \"elementor\",\n      \"category\": \"page-builder\"\n    },\n    {\n      \"name\": \"WooCommerce\",\n      \"slug\": \"woocommerce\",\n      \"category\": \"ecommerce\"\n    },\n    {\n      \"name\": \"Rank Math SEO\",\n      \"slug\": \"seo-by-rank-math\",\n      \"category\": \"seo\"\n    },\n    {\n      \"name\": \"WP Rocket\",\n      \"slug\": \"wp-rocket\",\n      \"category\": \"caching\"\n    },\n    {\n      \"name\": \"Contact Form 7\",\n      \"slug\": \"contact-form-7\",\n      \"category\": \"forms\"\n    }\n  ]\n}\n```",
+  "verdict": "ok",
+  "recordedAt": "2026-10-03T15:27:49.008Z",
+  "model": null
+}
