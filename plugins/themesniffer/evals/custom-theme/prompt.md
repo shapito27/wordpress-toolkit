@@ -1,6 +1,6 @@
 ---
 name: custom-theme
-description: "Custom theme: says it can't be bought, mentions the framework, invents nothing"
+description: "Custom theme: says it can't be bought, invents nothing"
 tags: [theme, edge]
 max_turns: 10
 allowed_tools: [Skill, Read, Glob]

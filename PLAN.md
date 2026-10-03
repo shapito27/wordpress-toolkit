@@ -114,7 +114,7 @@ Raise `version` on every release (the directory follows the tracked branch).
   "mcpServers": {
     "themesniffer": {
       "type": "http",
-      "url": "https://themesniffer.com/mcp"
+      "url": "https://themesniffer.com/api/mcp"
     }
   }
 }
@@ -148,14 +148,27 @@ Server-side requirements to verify before submitting:
   crawler / WAF", "timeout", "rate limit, retry after N s", "quota exceeded".
 - Response size kept small (structured JSON, not raw HTML).
 
-Expected tools (placeholders until confirmed against /developers):
+Confirmed tools (from https://themesniffer.com/developers and the live
+`tools/list`; all take `url`, a bare domain is fine):
 
-| Tool | Input | Output |
-| - | - | - |
-| `detect_site` / `analyze_url` | `url` | is_wordpress, theme {name, slug, version, author, parent, is_child, is_custom, theme_uri, screenshot}, plugins[] {name, slug, version, category, wp_org_url, confidence} |
-| `get_theme_info` | `slug` | details, price/free, wp.org rating, active installs |
-| `get_plugin_info` | `slug` | same for plugins |
-| `bulk_detect` (optional) | `urls[]` | array of the above |
+| Tool | Returns |
+| - | - |
+| `check_if_wordpress` | isWordPress (true/false/null), confidence, 8 signals, theme |
+| `get_wordpress_tech_stack` | the above plus plugins[] {slug, name, category, known, premium, version}, hosting, cdn, server, performance, security |
+| `detect_website_fonts` | font families, providers, type scale |
+| `extract_color_palette` | palette, roles, theme.json colors, contrast |
+
+Theme fields: name, slug, nameSource (style.css / wordpress.org / slug =
+guess), parentTheme (child themes), inRepo, wpOrgUrl, themeUri, version,
+latestVersion, outdated, author, activeInstalls (bucketed floor), downloads.
+A blocked site returns success with `isWordPress: null`, `blocked`,
+`blockedBy`, `note`; a failed call is a tool result with `isError: true`.
+
+**Server blocker (found in live testing):** every tool declares
+`_meta.ui.visibility: ["app"]`. Under MCP Apps that means app-only, so Claude
+Code connects but hides all four tools from the model ("kept from the model")
+and the skills fall back to manual checks. Fix on the server: set
+`"visibility": ["model", "app"]` or drop `visibility` (the default is both).
 
 ## 6. Skills
 
@@ -287,7 +300,7 @@ section 4 must match exactly what the server does.
 
 | # | Milestone | Done when |
 | - | - | - |
-| 0 | Confirm MCP details (open questions) | tool list, auth, endpoint known |
+| 0 | Confirm MCP details (open questions) | tool list, auth, endpoint known - **done; server visibility fix pending** |
 | 1 | Scaffold plugin + marketplace.json, README, LICENSE | `claude plugin validate` passes - **done** |
 | 2 | Write 3 skills + references + 2 commands | works in Claude Code against live MCP - **written; live MCP test and exact tool names pending** |
 | 3 | Evals + iterate on skill wording | plugin beats baseline on the case set - **done against mocked server: 9 cases, with-plugin 0.99 -> 1.00 after fix, mean delta vs no plugin +0.71; re-run against the live server once its schema is known** |
@@ -301,12 +314,13 @@ supports reverse lookup), outdated-version alerts, Shopify detection.
 
 ## 12. Open questions
 
-1. Exact MCP endpoint URL and transport (streamable HTTP / SSE)?
-2. Auth: none, OAuth, or API key? (Decides whether claude.ai/Cowork work.)
-3. Tool names, input schemas, and sample responses.
-4. Rate limits, free vs paid quotas, and what errors look like.
-5. What ThemeSniffer logs/stores per request and retention (for README and
-   data-handling answers).
+1. ~~Endpoint/transport~~ `https://themesniffer.com/api/mcp`, Streamable HTTP,
+   stateless.
+2. ~~Auth~~ None, so the connector works on claude.ai, Cowork and Claude Code.
+3. ~~Tool names and responses~~ See section 5.
+4. ~~Rate limits~~ 30 JSON-RPC requests/min per IP on `/api/mcp`; free.
+5. What ThemeSniffer logs/stores per request and retention (for the
+   data-handling answers) - check https://themesniffer.com/privacy.
 6. Is the submitting Claude org the ThemeSniffer owner? (brand check)
 7. ~~License: MIT ok?~~ Yes, MIT.
 8. Copyright holder name for LICENSE (currently "ThemeSniffer").

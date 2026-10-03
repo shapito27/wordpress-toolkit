@@ -1,19 +1,75 @@
 {
   "tools": [
     {
-      "name": "analyze_url",
-      "description": "Detect whether a website runs WordPress and which theme and plugins it uses. Input: a public URL.",
+      "name": "check_if_wordpress",
+      "title": "Is it WordPress?",
+      "description": "Check whether a website is built with WordPress. Returns a yes/no verdict, a confidence level, which of the eight detection signals matched, and the active theme when one is identifiable.",
       "inputSchema": {
         "type": "object",
         "properties": {
           "url": {
             "type": "string",
-            "description": "Public website URL, e.g. https://example.com"
+            "description": "The website to analyze. A bare domain works \u2014 \"wordpress.org\" and \"https://wordpress.org/\" behave the same."
           }
         },
         "required": [
           "url"
-        ]
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "get_wordpress_tech_stack",
+      "title": "Tech stack report",
+      "description": "Get the full tech stack behind a website: WordPress theme, active plugins, hosting provider, CDN, web server, security headers, and page speed measurements. The broadest of these tools \u2014 prefer it when the question is open-ended (\"what is this site built with?\").",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "The website to analyze. A bare domain works \u2014 \"wordpress.org\" and \"https://wordpress.org/\" behave the same."
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "detect_website_fonts",
+      "title": "Font detector",
+      "description": "List every font a website uses: families with weights and styles, the provider each comes from (Google Fonts, Bunny, Fontshare, Adobe kits, self-hosted @font-face), system font stacks, WordPress theme.json font presets, and the CSS type scale. Works on non-WordPress sites too.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "The website to analyze. A bare domain works \u2014 \"stripe.com\" and \"https://stripe.com/\" behave the same."
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "extract_color_palette",
+      "title": "Color palette extractor",
+      "description": "Extract a website's color palette from its CSS: every color with hex, rgb and hsl, which color plays which role (background, text, primary, accent, border), the WordPress theme.json palette, gradients, and WCAG contrast pairs. Works on non-WordPress sites too.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "The website to analyze. A bare domain works \u2014 \"stripe.com\" and \"https://stripe.com/\" behave the same."
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "additionalProperties": false
       }
     }
   ]

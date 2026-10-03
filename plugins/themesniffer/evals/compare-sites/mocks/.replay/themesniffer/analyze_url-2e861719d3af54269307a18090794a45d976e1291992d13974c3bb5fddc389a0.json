@@ -1,9 +1,0 @@
-{
-  "input": {
-    "url": "https://copperkettle-cafe.com"
-  },
-  "output": "```json\n{\n  \"url\": \"https://copperkettle-cafe.com/\",\n  \"is_wordpress\": true,\n  \"theme\": {\n    \"name\": \"Blocksy\",\n    \"slug\": \"blocksy\",\n    \"author\": \"CreativeThemes\",\n    \"is_child\": false,\n    \"is_custom\": false,\n    \"price\": \"free\"\n  },\n  \"plugins\": [\n    {\n      \"name\": \"Elementor\",\n      \"slug\": \"elementor\",\n      \"category\": \"page-builder\"\n    },\n    {\n      \"name\": \"Yoast SEO\",\n      \"slug\": \"wordpress-seo\",\n      \"category\": \"seo\"\n    },\n    {\n      \"name\": \"LiteSpeed Cache\",\n      \"slug\": \"litespeed-cache\",\n      \"category\": \"caching\"\n    },\n    {\n      \"name\": \"Contact Form 7\",\n      \"slug\": \"contact-form-7\",\n      \"category\": \"forms\"\n    }\n  ]\n}\n```",
-  "verdict": "ok",
-  "recordedAt": "2026-10-03T15:27:50.911Z",
-  "model": null
-}

@@ -13,9 +13,10 @@ a side-by-side comparison.
 1. **Collect the URLs.** Normalize each one (add `https://`, drop tracking
    parameters, remove duplicates). For more than 10 sites, confirm with the
    user before running, since each site is a separate check.
-2. **Detect each site** with the ThemeSniffer connector. If it offers a bulk
-   tool, use it; otherwise check sites one at a time. Keep going if one site
-   fails and report the failure in its row.
+2. **Detect each site** with the ThemeSniffer connector's
+   `get_wordpress_tech_stack` tool, one site at a time (it allows about 30
+   requests a minute). Keep going if one site fails or is blocked and report
+   that in its row.
 3. **Interpret each result** the same way as the `detect-wordpress-theme` and
    `detect-wordpress-plugins` skills (child themes, custom themes, page
    builders, not WordPress).
@@ -30,6 +31,7 @@ a side-by-side comparison.
 **Page builder:** <name or "none detected">
 **E-commerce:** <name or "none detected">
 **SEO:** <name or "none detected">
+**Hosting / CDN:** <hosting.name and cdn.name, or "not identified">
 
 **All detected plugins** (<N>)
 <grouped list as in detect-wordpress-plugins>
@@ -52,7 +54,14 @@ Start with a comparison table, one column per site:
 | SEO | Rank Math | Yoast SEO |
 | Caching | WP Rocket | LiteSpeed Cache |
 | Plugins detected | 14 | 9 |
+| Hosting / CDN | Kinsta / Cloudflare | not identified / - |
+| Speed snapshot | 74 (Fair) | 88 (Good) |
 ```
+
+The speed figure is `performance.score` and `grade`: a single lab
+measurement from ThemeSniffer's servers, useful for comparing sites in the same
+run, not real visitor Core Web Vitals. Say so if you show it. Hosting or CDN
+"not identified" means no header signature matched, not that there is none.
 
 Then:
 - **Shared:** plugins every site uses.
@@ -68,9 +77,11 @@ Only observations the data supports, such as:
 - More than one plugin doing the same job (two SEO or two caching plugins).
 - A page builder plus a theme that has its own builder.
 - Not WordPress, or a custom theme that can't be bought.
-- A version or security finding, only if the connector reported it.
+- An outdated theme (`theme.outdated`), or missing security headers from
+  `security`, only as reported.
 
-Don't speculate about performance, security or traffic.
+Don't speculate about performance, security or traffic beyond what the
+result reports.
 
 ## Rules
 

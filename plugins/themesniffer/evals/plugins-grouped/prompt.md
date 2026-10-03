@@ -1,6 +1,6 @@
 ---
 name: plugins-grouped
-description: "Lists plugins grouped by category with the detection caveat"
+description: "Groups plugins, resolves 'Other' via the reference, adds the caveat"
 tags: [plugins, smoke]
 max_turns: 10
 allowed_tools: [Skill, Read, Glob]

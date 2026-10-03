@@ -1,5 +1,5 @@
 ---
 type: regex
-pattern: '"is_wordpress"|"plugins"\s*:|"slug"\s*:'
+pattern: '"isWordPress"|"plugins"\s*:|"nameSource"'
 match: not_contains
 ---

@@ -17,6 +17,7 @@ check. It covers common plugins only; anything not listed goes under "Other".
 | Breakdance | `breakdance` |
 | Brizy | `brizy` |
 | Spectra | `ultimate-addons-for-gutenberg` |
+| Spectra Pro | `spectra-pro` |
 | Kadence Blocks | `kadence-blocks` |
 | GenerateBlocks | `generateblocks` |
 | Stackable | `stackable-ultimate-gutenberg-blocks` |
@@ -51,6 +52,7 @@ check. It covers common plugins only; anything not listed goes under "Other".
 | Ninja Forms | `ninja-forms` |
 | Fluent Forms | `fluentform` |
 | Formidable Forms | `formidable` |
+| SureForms | `sureforms`, `sureforms-pro` |
 
 ## Caching and performance
 
@@ -103,6 +105,7 @@ check. It covers common plugins only; anything not listed goes under "Other".
 | Smart Slider 3 | `smart-slider-3` |
 | LayerSlider | `LayerSlider` |
 | MetaSlider | `ml-slider` |
+| Presto Player | `presto-player` |
 
 ## Social
 
@@ -119,6 +122,7 @@ check. It covers common plugins only; anything not listed goes under "Other".
 | CookieYes | `cookie-law-info` |
 | Complianz | `complianz-gdpr` |
 | Cookiebot | `cookiebot` |
+| SureCookie | `surecookie` |
 
 ## Security
 
@@ -136,3 +140,5 @@ Security plugins rarely leave front-end traces, so they are often missed.
 | - | - |
 | Jetpack | `jetpack` |
 | Advanced Custom Fields | `advanced-custom-fields`, `advanced-custom-fields-pro` |
+| Astra Pro (theme add-on) | `astra-addon` |
+| GP Premium (theme add-on) | `gp-premium` |

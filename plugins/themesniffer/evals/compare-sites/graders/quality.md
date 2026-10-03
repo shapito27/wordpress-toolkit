@@ -8,6 +8,7 @@ PASS if the response:
 - Points out what they share (Elementor, Contact Form 7) and key differences
   (WooCommerce only on northwind-bakery.com; Rank Math vs Yoast SEO; WP Rocket
   vs LiteSpeed Cache)
+- If it shows speed scores, doesn't present them as real-visitor measurements
 
 FAIL if the response mixes up which site uses which theme or plugin, or
-invents plugins not in the results.
+invents plugins, hosts or numbers not in the results.

@@ -2,7 +2,7 @@
   "mcpServers": {
     "themesniffer": {
       "type": "http",
-      "url": "https://themesniffer.com/mcp"
+      "url": "https://themesniffer.com/api/mcp"
     }
   }
 }

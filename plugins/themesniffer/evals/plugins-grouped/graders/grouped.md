@@ -2,11 +2,11 @@
 type: llm
 ---
 
-PASS if the plugins are grouped under category headings or labels (for
-example e-commerce, page builder, SEO, caching, forms, analytics, privacy,
-other), and each plugin sits in a sensible group. MonsterInsights belongs
-under analytics/marketing and Complianz under privacy/cookies; putting either
-of them under "Other" is also acceptable.
+PASS if the plugins are grouped under category headings or labels and each
+sits in a sensible group, with the three plugins the result left as "Other"
+resolved: MonsterInsights under analytics/marketing, Complianz under
+privacy/cookies, and the Instagram feed under social (or media).
 
-FAIL if the plugins are one flat unlabelled list, or a plugin is put in a
-clearly wrong category (for example WooCommerce under SEO).
+FAIL if the plugins are one flat unlabelled list, if a plugin is put in a
+clearly wrong category, or if all three of those plugins are left under
+"Other".

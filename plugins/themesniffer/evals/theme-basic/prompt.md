@@ -1,6 +1,6 @@
 ---
 name: theme-basic
-description: "Identifies a free wordpress.org theme and strips tracking parameters"
+description: "Free directory theme: names it, notes it is outdated, strips tracking parameters"
 tags: [theme, smoke]
 max_turns: 10
 allowed_tools: [Skill, Read, Glob]

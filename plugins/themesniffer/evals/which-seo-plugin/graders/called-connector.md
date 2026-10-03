@@ -1,5 +1,5 @@
 ---
 type: regex
 target: mock_calls
-pattern: "analyze_url"
+pattern: "check_if_wordpress|get_wordpress_tech_stack"
 ---

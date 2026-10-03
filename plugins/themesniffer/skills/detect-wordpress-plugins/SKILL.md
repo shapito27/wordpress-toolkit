@@ -12,16 +12,22 @@ they're easy to scan, and be clear about what can't be detected.
 
 1. **Get the URL** the same way as for theme detection: accept bare domains,
    add `https://`, drop tracking parameters, one site per check.
-2. **Run the detection.** Call the ThemeSniffer connector's tool that analyzes
-   a URL. It usually returns the theme as well; include it in one line at the
-   top of the answer. If the connector offers a plugin details lookup, use it
-   only for plugins the user asks about or when the result lacks a name.
-3. **Group the plugins** by category using the category from the result. If
-   any plugin has no category, read `references/plugin-categories.md` before
-   writing the answer and match those plugins by slug or name. If a plugin
-   isn't listed there but its name plainly states what it does (for example
-   "Instagram Feed" or "Cookie Consent"), group it by that. Put only the
-   plugins that are still unclear under "Other".
+2. **Run the detection** with the ThemeSniffer connector's
+   `get_wordpress_tech_stack` tool, passing the URL as `url`. It also returns
+   the theme; include it in one line at the top of the answer. If
+   `isWordPress` is `null` or `blocked` is true, the page couldn't be read:
+   report that (with `note`) instead of a plugin list.
+3. **Group the plugins.** Each plugin has `name`, `slug`, `known`, and
+   usually `category`, `premium` and `version`. Use `category` when it's
+   specific. When it's missing or `"Other"`, read
+   `references/plugin-categories.md` before writing the answer and match by
+   slug or name; for example `ultimate-addons-for-gutenberg` is Spectra, a
+   page builder. If a plugin isn't listed there but its name plainly states
+   what it does (for example "Instagram Feed" or "Cookie Consent"), group it
+   by that. Put only the plugins that are still unclear under "Other".
+   - `known: false` means ThemeSniffer title-cased the name from the folder
+     slug. Use the reference's real name when it has one; otherwise keep the
+     name as given.
 4. **Answer** in this shape:
 
    ```
@@ -40,7 +46,7 @@ they're easy to scan, and be clear about what can't be detected.
    - Order categories by how useful they are for rebuilding the site: page
      builder, e-commerce, SEO, forms, caching/performance, then the rest.
    - Show a version only if the result reports one, and don't present it as
-     certain.
+     certain. Mark a plugin premium only when `premium` is true.
    - If the user asked about one kind of plugin ("which SEO plugin?"), answer
      that first in one line, then offer the full list.
 5. **Add the caveat** about undetectable plugins every time. If no plugins

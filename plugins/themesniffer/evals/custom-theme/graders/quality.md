@@ -3,9 +3,9 @@ type: llm
 ---
 
 PASS if the response:
-- Says the site uses a custom (bespoke) theme that isn't available to buy or
-  download
-- Mentions that it is built on Underscores (_s)
+- Names the theme "Studio Forma"
+- Says it is most likely a custom (bespoke) theme made for the site, not in
+  the WordPress.org directory, so it isn't available to buy or download
 
 FAIL if the response:
 - Gives a store, price or download link for the "Studio Forma" theme
