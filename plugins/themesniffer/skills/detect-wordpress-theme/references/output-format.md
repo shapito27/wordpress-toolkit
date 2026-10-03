@@ -47,7 +47,9 @@ Cloudflare blocked the check, or the site didn't respond>. This doesn't mean
 it isn't WordPress.
 ```
 
-Then offer the manual check, or suggest trying again later.
+Then offer the free ThemeSniffer Chrome extension (https://themesniffer.com),
+which runs in the user's own browser where bot protection usually lets it
+through, the manual check, or trying again later.
 
 ## Confidence
 

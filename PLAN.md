@@ -164,8 +164,9 @@ latestVersion, outdated, author, activeInstalls (bucketed floor), downloads.
 A blocked site returns success with `isWordPress: null`, `blocked`,
 `blockedBy`, `note`; a failed call is a tool result with `isError: true`.
 
-**Server blocker (found in live testing):** every tool declares
-`_meta.ui.visibility: ["app"]`. Under MCP Apps that means app-only, so Claude
+**Server blocker (found in live testing, fixed in
+shapito27/wordpress-theme-detector-landing#62, live 2026-10-03):** every tool
+declared `_meta.ui.visibility: ["app"]`. Under MCP Apps that means app-only, so Claude
 Code connects but hides all four tools from the model ("kept from the model")
 and the skills fall back to manual checks. Fix on the server: set
 `"visibility": ["model", "app"]` or drop `visibility` (the default is both).
@@ -300,9 +301,9 @@ section 4 must match exactly what the server does.
 
 | # | Milestone | Done when |
 | - | - | - |
-| 0 | Confirm MCP details (open questions) | tool list, auth, endpoint known - **done; server visibility fix pending** |
+| 0 | Confirm MCP details (open questions) | tool list, auth, endpoint known - **done; server visibility fixed and live** |
 | 1 | Scaffold plugin + marketplace.json, README, LICENSE | `claude plugin validate` passes - **done** |
-| 2 | Write 3 skills + references + 2 commands | works in Claude Code against live MCP - **written; live MCP test and exact tool names pending** |
+| 2 | Write 3 skills + references + 2 commands | works in Claude Code against live MCP - **done: live runs call the real tools and load the skills** |
 | 3 | Evals + iterate on skill wording | plugin beats baseline on the case set - **done against mocked server: 9 cases, with-plugin 0.99 -> 1.00 after fix, mean delta vs no plugin +0.71; re-run against the live server once its schema is known** |
 | 4 | Test on claude.ai and Cowork via zip upload | all components load, connector connects |
 | 5 | Portal validate (private repo), fix findings | no Blocking findings |

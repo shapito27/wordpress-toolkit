@@ -1,6 +1,6 @@
 ---
 name: wordpress-site-audit
-description: Report the full WordPress stack (theme, page builder and plugins) of one or more websites and compare them. Use for competitor research, client prospecting, migration or redesign scoping, or when the user asks to compare how several sites are built.
+description: Report a website's full WordPress stack - theme, page builder, plugins and hosting - or compare several sites. Use before calling ThemeSniffer's tools whenever the user asks for a site's theme and plugins together, what a site is built with, or how several sites compare (competitor research, client prospecting, migration or redesign scoping).
 ---
 
 # WordPress stack report and comparison

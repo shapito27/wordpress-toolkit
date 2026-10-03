@@ -1,6 +1,6 @@
 ---
 name: detect-wordpress-plugins
-description: List the WordPress plugins a website uses. Use when the user asks which plugins a site runs, or which page builder, SEO, caching, forms, e-commerce, membership or multilingual plugin it uses, or wants to add the same features to their own site.
+description: List and categorize the WordPress plugins a website uses, including its page builder, SEO, caching, forms, e-commerce, membership or multilingual plugins. Use before calling ThemeSniffer's get_wordpress_tech_stack tool whenever the user asks which plugins or page builder a site uses, asks for a site's theme and plugins together, or wants to add the same features to their own site.
 ---
 
 # Detect a website's WordPress plugins
