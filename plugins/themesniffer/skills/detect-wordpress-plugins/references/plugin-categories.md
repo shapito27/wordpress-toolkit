@@ -104,6 +104,14 @@ check. It covers common plugins only; anything not listed goes under "Other".
 | LayerSlider | `LayerSlider` |
 | MetaSlider | `ml-slider` |
 
+## Social
+
+| Plugin | Slug |
+| - | - |
+| Smash Balloon Instagram Feed | `instagram-feed` |
+| Smash Balloon Facebook Feed | `custom-facebook-feed` |
+| Social Warfare | `social-warfare` |
+
 ## Privacy and cookies
 
 | Plugin | Slug |

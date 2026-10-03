@@ -16,10 +16,12 @@ they're easy to scan, and be clear about what can't be detected.
    a URL. It usually returns the theme as well; include it in one line at the
    top of the answer. If the connector offers a plugin details lookup, use it
    only for plugins the user asks about or when the result lacks a name.
-3. **Group the plugins** by category using the category from the result. When
-   the result has none, use `references/plugin-categories.md`. Put anything
-   unmatched under "Other". Don't guess a category from the name alone if
-   you're unsure; use "Other".
+3. **Group the plugins** by category using the category from the result. If
+   any plugin has no category, read `references/plugin-categories.md` before
+   writing the answer and match those plugins by slug or name. If a plugin
+   isn't listed there but its name plainly states what it does (for example
+   "Instagram Feed" or "Cookie Consent"), group it by that. Put only the
+   plugins that are still unclear under "Other".
 4. **Answer** in this shape:
 
    ```

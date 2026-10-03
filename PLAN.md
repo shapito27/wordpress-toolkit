@@ -290,7 +290,7 @@ section 4 must match exactly what the server does.
 | 0 | Confirm MCP details (open questions) | tool list, auth, endpoint known |
 | 1 | Scaffold plugin + marketplace.json, README, LICENSE | `claude plugin validate` passes - **done** |
 | 2 | Write 3 skills + references + 2 commands | works in Claude Code against live MCP - **written; live MCP test and exact tool names pending** |
-| 3 | Evals + iterate on skill wording | plugin beats baseline on the case set |
+| 3 | Evals + iterate on skill wording | plugin beats baseline on the case set - **done against mocked server: 9 cases, with-plugin 0.99 -> 1.00 after fix, mean delta vs no plugin +0.71; re-run against the live server once its schema is known** |
 | 4 | Test on claude.ai and Cowork via zip upload | all components load, connector connects |
 | 5 | Portal validate (private repo), fix findings | no Blocking findings |
 | 6 | Submit plugin + MCP connector, make repo public, publish | listing live |
