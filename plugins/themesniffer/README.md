@@ -34,7 +34,10 @@ it is connected.
 When you ask about a website, the website address you give is sent to the
 ThemeSniffer service at themesniffer.com, which loads that public page and
 returns the detected theme and plugins. Nothing else from your conversation is
-sent. The plugin itself runs no code on your computer and stores nothing. See
+sent. If the ThemeSniffer connector isn't connected, Claude can instead do a
+best-effort manual check by reading the public page you named (and its theme
+stylesheet) with its own web tools; nothing is sent to ThemeSniffer then. The
+plugin itself runs no code on your computer and stores nothing. See
 the ThemeSniffer privacy policy at https://themesniffer.com for how the
 service handles requests.
 
