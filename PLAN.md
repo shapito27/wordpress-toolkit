@@ -288,7 +288,7 @@ section 4 must match exactly what the server does.
 | # | Milestone | Done when |
 | - | - | - |
 | 0 | Confirm MCP details (open questions) | tool list, auth, endpoint known |
-| 1 | Scaffold plugin + marketplace.json, README, LICENSE | `claude plugin validate` passes |
+| 1 | Scaffold plugin + marketplace.json, README, LICENSE | `claude plugin validate` passes - **done** |
 | 2 | Write 3 skills + references + 2 commands | works in Claude Code against live MCP |
 | 3 | Evals + iterate on skill wording | plugin beats baseline on the case set |
 | 4 | Test on claude.ai and Cowork via zip upload | all components load, connector connects |
@@ -308,4 +308,5 @@ supports reverse lookup), outdated-version alerts, Shopify detection.
 5. What ThemeSniffer logs/stores per request and retention (for README and
    data-handling answers).
 6. Is the submitting Claude org the ThemeSniffer owner? (brand check)
-7. License: MIT ok?
+7. ~~License: MIT ok?~~ Yes, MIT.
+8. Copyright holder name for LICENSE (currently "ThemeSniffer").

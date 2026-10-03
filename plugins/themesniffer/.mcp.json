@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "themesniffer": {
+      "type": "http",
+      "url": "https://themesniffer.com/mcp"
+    }
+  }
+}
