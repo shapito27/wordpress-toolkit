@@ -1,0 +1,14 @@
+---
+type: llm
+---
+
+PASS if the response:
+- Explains that the site uses a child theme (Harborlight Child) built on the
+  GeneratePress parent theme
+- Makes clear that GeneratePress is the theme the user can get, and that the
+  child theme is site-specific
+
+FAIL if the response:
+- Tells the user to get "Harborlight Child" as if it were a public theme
+- Doesn't mention GeneratePress
+- Invents facts not in the result (prices, ratings, other themes)

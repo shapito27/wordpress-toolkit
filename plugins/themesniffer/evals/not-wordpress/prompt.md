@@ -1,0 +1,9 @@
+---
+name: not-wordpress
+description: "Non-WordPress site: says so and names the platform"
+tags: [theme, edge]
+max_turns: 10
+allowed_tools: [Skill]
+---
+
+What WordPress theme does lumen-candles.co use?

@@ -1,0 +1,20 @@
+{
+  "tools": [
+    {
+      "name": "analyze_url",
+      "description": "Detect whether a website runs WordPress and which theme and plugins it uses. Input: a public URL.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "Public website URL, e.g. https://example.com"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    }
+  ]
+}
