@@ -27,7 +27,7 @@ a side-by-side comparison.
 ```
 ## <site>
 
-**Theme:** <Theme> (<parent, if child theme>) - <free/premium/custom>
+**Theme:** <Theme> (<parent, if child theme>) - <free / likely premium / likely custom>
 **Page builder:** <name or "none detected">
 **E-commerce:** <name or "none detected">
 **SEO:** <name or "none detected">

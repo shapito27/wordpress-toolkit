@@ -15,9 +15,11 @@ the result so the user knows exactly what they can get and how.
    such as `utm_*`. Keep a path only if the user asked about that specific
    page. One site per check; for several sites, check each one.
 2. **Run the detection** with the ThemeSniffer connector:
-   - Theme-only question: `check_if_wordpress` (lighter, returns the theme).
-   - The user also wants plugins, the page builder or "how it's built":
-     `get_wordpress_tech_stack` (theme plus plugins, hosting, CDN, speed).
+   - Theme-only question ("what theme is this?"): `check_if_wordpress`
+     (lighter, returns the theme but no plugins).
+   - The user wants the same look or design, or also asks about plugins, the
+     page builder or "how it's built": `get_wordpress_tech_stack` (theme plus
+     plugins, hosting, CDN, speed). Only this result shows a page builder.
    Pass the URL as `url`; a bare domain is fine. Don't call both for the same
    site: the tech stack result already contains everything the WordPress
    check does.
@@ -26,7 +28,8 @@ the result so the user knows exactly what they can get and how.
    - `isWordPress`: `true`, `false`, or `null`. **`null` means the page could
      not be read, not "not WordPress".** Check `blocked`, `blockedBy` and
      `note` and report that instead of a verdict.
-   - `confidence`: high, medium, low or none. Mention it when it isn't high.
+   - `confidence`: high, medium, low or none (`unknown` when the page couldn't
+     be read). Mention it when it isn't high.
    - `theme.name` and `theme.nameSource`: when `nameSource` is `slug` the name
      was inferred from the folder name, so say it's a best guess.
    - `theme.parentTheme`: present for a child theme. It's the parent's slug.
@@ -46,10 +49,10 @@ the result so the user knows exactly what they can get and how.
      likely a premium theme from that vendor. If it points to the site itself
      or an agency, or there's no `themeUri`, it's likely custom and can't be
      bought as-is. Say how sure you are.
-   - **Page builder in use** (Elementor, Divi, Beaver Builder, Bricks, Spectra
-     and similar, visible in the plugins): say that much of the look comes
-     from the builder, not the theme, so installing the theme alone won't
-     reproduce the design.
+   - **Page builder in use** (a builder plugin such as Elementor, Beaver
+     Builder or Spectra, or a builder theme such as Divi or Bricks): say that
+     much of the look comes from the builder, not the theme alone. With a
+     builder plugin, installing the theme alone won't reproduce the design.
    - **Not WordPress** (`isWordPress: false`): say so plainly. Don't guess a
      theme, and don't name another platform unless the result shows it.
    - **Couldn't analyze** (`isWordPress: null`, `blocked`, or an error): say

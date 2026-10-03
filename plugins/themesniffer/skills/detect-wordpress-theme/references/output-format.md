@@ -22,14 +22,17 @@ the same look. Skip if there is nothing useful to add.>
 ```
 
 For a child theme, write the first line as:
-"**<site>** uses **<Child Name>**, a child theme of **<Parent Name>** by
-<Author>."
+"**<site>** uses **<Child Name>**, a child theme of **<Parent Name>**."
+The result gives the parent as a slug (`parentTheme`, e.g. `generatepress`);
+write it as the theme's usual name (GeneratePress). The author shown is the
+child theme's author, not the parent's.
 
 ## Custom theme
 
 ```
-**<site>** runs WordPress with a custom theme (**<slug or name>**), so it
-isn't available to download or buy. <If known: "It's built on <framework>.">
+**<site>** runs WordPress with **<name>**, which is most likely a custom
+theme made for this site, so it isn't something you can download or buy.
+<If it's a child theme: "It's built on <Parent>.">
 ```
 
 ## Not WordPress

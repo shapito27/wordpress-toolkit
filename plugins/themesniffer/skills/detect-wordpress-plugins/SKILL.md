@@ -1,6 +1,6 @@
 ---
 name: detect-wordpress-plugins
-description: List and categorize the WordPress plugins a website uses, including its page builder, SEO, caching, forms, e-commerce, membership or multilingual plugins. Use before calling ThemeSniffer's get_wordpress_tech_stack tool whenever the user asks which plugins or page builder a site uses, asks for a site's theme and plugins together, or wants to add the same features to their own site.
+description: List and categorize the WordPress plugins a website uses, including its page builder, SEO, caching, forms, e-commerce, membership or multilingual plugins. Use before calling ThemeSniffer's get_wordpress_tech_stack tool whenever the user asks which plugins or page builder a site uses, or wants to add the same features to their own site.
 ---
 
 # Detect a website's WordPress plugins
@@ -15,8 +15,11 @@ they're easy to scan, and be clear about what can't be detected.
 2. **Run the detection** with the ThemeSniffer connector's
    `get_wordpress_tech_stack` tool, passing the URL as `url`. It also returns
    the theme; include it in one line at the top of the answer. If
-   `isWordPress` is `null` or `blocked` is true, the page couldn't be read:
-   report that (with `note`) instead of a plugin list.
+   `isWordPress` is `null`, `blocked` is true or the result is an error, the
+   page couldn't be read: report that (with `note`) instead of a plugin list,
+   and don't call it "not WordPress". If `isWordPress` is `false`, say the
+   site doesn't appear to run WordPress, so there are no WordPress plugins to
+   list.
 3. **Group the plugins.** Each plugin has `name`, `slug`, `known`, and
    usually `category`, `premium` and `version`. Use `category` when it's
    specific. When it's missing or `"Other"`, read
@@ -34,7 +37,7 @@ they're easy to scan, and be clear about what can't be detected.
    **<site>** runs WordPress with the <Theme> theme and <N> detected plugins.
 
    **Page builder**
-   - <Plugin name> - <free/premium if known> - <link>
+   - <Plugin name> <(premium) when `premium` is true>
 
    **SEO**
    - ...
@@ -47,6 +50,8 @@ they're easy to scan, and be clear about what can't be detected.
      builder, e-commerce, SEO, forms, caching/performance, then the rest.
    - Show a version only if the result reports one, and don't present it as
      certain. Mark a plugin premium only when `premium` is true.
+   - The result has no plugin links. Don't add any unless the user asks; then
+     link only a wordpress.org page you know exists, or say where to look.
    - If the user asked about one kind of plugin ("which SEO plugin?"), answer
      that first in one line, then offer the full list.
 5. **Add the caveat** about undetectable plugins every time. If no plugins

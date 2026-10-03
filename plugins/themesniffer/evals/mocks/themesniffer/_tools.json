@@ -16,6 +16,22 @@
           "url"
         ],
         "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Is it WordPress?",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      },
+      "_meta": {
+        "ui": {
+          "resourceUri": "ui://themesniffer/check_if_wordpress",
+          "visibility": [
+            "model",
+            "app"
+          ]
+        }
       }
     },
     {
@@ -34,6 +50,22 @@
           "url"
         ],
         "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Tech stack report",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      },
+      "_meta": {
+        "ui": {
+          "resourceUri": "ui://themesniffer/get_wordpress_tech_stack",
+          "visibility": [
+            "model",
+            "app"
+          ]
+        }
       }
     },
     {
@@ -52,6 +84,22 @@
           "url"
         ],
         "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Font detector",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      },
+      "_meta": {
+        "ui": {
+          "resourceUri": "ui://themesniffer/detect_website_fonts",
+          "visibility": [
+            "model",
+            "app"
+          ]
+        }
       }
     },
     {
@@ -70,6 +118,22 @@
           "url"
         ],
         "additionalProperties": false
+      },
+      "annotations": {
+        "title": "Color palette extractor",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      },
+      "_meta": {
+        "ui": {
+          "resourceUri": "ui://themesniffer/extract_color_palette",
+          "visibility": [
+            "model",
+            "app"
+          ]
+        }
       }
     }
   ]

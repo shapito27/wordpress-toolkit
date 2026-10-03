@@ -1,9 +1,11 @@
 ---
+error: true
 expect:
   url: string
 ---
 
-Could not analyze https://ironpeak-gym.com/: Cloudflare, which fronts this site, blocked our request (HTTP 403), so we could not check it for WordPress. That is a bot-protection rule, not an outage - the site itself is up and serves normal browsers.
+Could not read the tech stack for https://ironpeak-gym.com/.
+Cloudflare, which fronts this site, blocked our request (HTTP 403), so we could not check it for WordPress. That is a bot-protection rule, not an outage - the site itself is up and serves normal browsers.
 
 Structured result:
 {
