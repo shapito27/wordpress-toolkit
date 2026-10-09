@@ -71,15 +71,16 @@ the result so the user knows exactly what they can get and how.
 - Don't paste raw tool output. Summarize it.
 - Prefer links the connector returned (`wpOrgUrl`, `themeUri`). Link a
   wordpress.org page only when `inRepo` is true.
-- The connector allows about 30 requests a minute. For many sites, check them
-  one at a time and don't repeat a site you already checked.
+- The connector is rate limited. For many sites, check them one at a time and
+  don't repeat a site you already checked.
 - Only analyze sites the user asked about. Don't crawl beyond the pages needed.
 - If the user also wants the plugins, follow the `detect-wordpress-plugins`
   skill in the same answer.
 
 ## If the connector isn't available
 
-If the ThemeSniffer tools aren't connected, tell the user that connecting
-ThemeSniffer from the plugin's Connectors tab gives the most reliable result.
+If the ThemeSniffer tools aren't available, tell the user that connecting the
+ThemeSniffer connector (the MCP server bundled with this plugin) gives the most
+reliable result.
 If you can fetch web pages, you can do a best-effort manual check with
 `references/manual-detection.md`, and label the answer as a manual check.

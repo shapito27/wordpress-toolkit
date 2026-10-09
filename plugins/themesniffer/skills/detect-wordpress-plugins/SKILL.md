@@ -68,8 +68,8 @@ they're easy to scan, and be clear about what can't be detected.
 
 ## If the connector isn't available
 
-Tell the user that connecting ThemeSniffer from the plugin's Connectors tab
-gives the most complete result. If you can fetch web pages, look for
-`/wp-content/plugins/<slug>/` in the page's asset URLs, plugin HTML comments
-and generator meta tags, map slugs with `references/plugin-categories.md`, and
-label the answer as a manual check.
+Tell the user that connecting the ThemeSniffer connector (the MCP server
+bundled with this plugin) gives the most complete result. If you can fetch web
+pages, look for `/wp-content/plugins/<slug>/` in the page's asset URLs, plugin
+HTML comments and generator meta tags, map slugs with
+`references/plugin-categories.md`, and label the answer as a manual check.

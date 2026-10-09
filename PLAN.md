@@ -325,3 +325,36 @@ supports reverse lookup), outdated-version alerts, Shopify detection.
 6. Is the submitting Claude org the ThemeSniffer owner? (brand check)
 7. ~~License: MIT ok?~~ Yes, MIT.
 8. Copyright holder name for LICENSE (currently "ThemeSniffer").
+
+## 13. OpenAI (ChatGPT and Codex)
+
+Same plugin folder, second manifest. OpenAI reads the root `plugin.json`
+(Agent Plugins format) and `mcp.json` (`"type": "streamable-http"`); Claude
+keeps reading `.claude-plugin/` and `.mcp.json`. Skills are shared; each has
+`agents/openai.yaml` declaring its dependency on the ThemeSniffer server.
+Commands are Claude-only (OpenAI asks for commands to become skills; ours only
+call the existing skills, so they are left out of the OpenAI package).
+
+- Listing: `extensions.com.openai.interface` in `plugin.json`. Developer name
+  Ruslan Saifullin, category Developer Tools, icons in `assets/` (the site's
+  192px icon), brand color #059669 / #10B981.
+- Review: `extensions.com.openai.review.test_cases` has the 5 positive and 3
+  negative cases OpenAI requires, using real sites checked against the live
+  server (wpastra.com, elementor.com, generatepress.com, shopify.com).
+- Package: `python3 scripts/package_openai.py plugins/themesniffer` checks the
+  listing limits and writes `dist/themesniffer-openai-<version>.zip` without
+  `.claude-plugin/`, `.mcp.json`, `commands/` or `evals/`.
+- Verified with Codex CLI 0.162.0: the repo marketplace installs the plugin,
+  `codex mcp list` shows the ThemeSniffer server, and the model prompt lists
+  all three skills.
+- Server (shapito27/wordpress-theme-detector-landing#63): MCP rate limit
+  300/min per IP for shared assistant IPs, empty view CSP, ChatGPT status text.
+
+Still to do, by the owner:
+1. OpenAI organization with Apps Management Write, identity verified as
+   Ruslan Saifullin.
+2. Portal: Create plugin > With MCP > `https://themesniffer.com/api/mcp`;
+   upload the ZIP; serve the portal's token at
+   `/.well-known/openai-apps-challenge` (site repo follow-up).
+3. Record a demo video and add it as `demo_recording_url`.
+4. Test in ChatGPT (Work chat, `@ThemeSniffer`) and the Codex app.

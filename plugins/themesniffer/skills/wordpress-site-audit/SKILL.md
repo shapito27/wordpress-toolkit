@@ -14,9 +14,8 @@ a side-by-side comparison.
    parameters, remove duplicates). For more than 10 sites, confirm with the
    user before running, since each site is a separate check.
 2. **Detect each site** with the ThemeSniffer connector's
-   `get_wordpress_tech_stack` tool, one site at a time (it allows about 30
-   requests a minute). Keep going if one site fails or is blocked and report
-   that in its row.
+   `get_wordpress_tech_stack` tool, one site at a time (it is rate limited).
+   Keep going if one site fails or is blocked and report that in its row.
 3. **Interpret each result** the same way as the `detect-wordpress-theme` and
    `detect-wordpress-plugins` skills (child themes, custom themes, page
    builders, not WordPress).

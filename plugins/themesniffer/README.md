@@ -1,15 +1,17 @@
 # ThemeSniffer - WordPress Theme & Plugin Detector
 
 Find out which WordPress theme and plugins any website uses, right from a
-conversation with Claude. The plugin connects Claude to the ThemeSniffer
-service and teaches it how to read the results: it names the active theme
-(and its parent theme when a child theme is used), lists detected plugins
-grouped by category such as page builders, SEO, caching, e-commerce, forms and
-security, and links to where you can get them.
+conversation with your AI assistant. The plugin works in Claude (claude.ai,
+Cowork and Claude Code) and in ChatGPT and Codex. It connects the assistant to
+the ThemeSniffer service and teaches it how to read the results: it names the
+active theme (and its parent theme when a child theme is used), says whether
+the theme is free, premium or custom, lists detected plugins grouped by
+category such as page builders, e-commerce, SEO, forms and caching, and
+compares several sites side by side.
 
 ## Use it
 
-Ask Claude about any public website, for example:
+Ask about any public website, for example:
 
 - "What WordPress theme does example.com use?"
 - "Which plugins is this site running? https://example.com"
@@ -22,18 +24,21 @@ In Claude Code and Cowork you can also run the commands directly:
 
 ## Setup
 
-1. Install the plugin from the Claude plugin directory (or from this
-   repository's marketplace).
-2. Open the plugin's **Connectors** tab and connect **ThemeSniffer**. No
-   account, sign-in or API key is needed.
+No account, sign-in or API key is needed.
 
-In Claude Code the connector loads with the plugin; run `/mcp` to check that
-it is connected.
+**Claude:** install the plugin from the Claude plugin directory (or from this
+repository's marketplace), then open the plugin's **Connectors** tab and
+connect **ThemeSniffer**. In Claude Code the connector loads with the plugin;
+run `/mcp` to check that it is connected.
+
+**ChatGPT and Codex:** install ThemeSniffer from the plugin directory (or add
+this repository as a Codex marketplace), then mention it with `@ThemeSniffer`
+in a chat.
 
 ## What the connector provides
 
 The ThemeSniffer connector (`https://themesniffer.com/api/mcp`) offers four
-tools. The skills in this plugin use the first two:
+read-only tools. The skills in this plugin use the first two:
 
 - `check_if_wordpress` - WordPress verdict, confidence and the active theme
 - `get_wordpress_tech_stack` - theme, plugins, hosting, CDN, server, security
@@ -41,19 +46,20 @@ tools. The skills in this plugin use the first two:
 - `detect_website_fonts` - the fonts a site uses
 - `extract_color_palette` - a site's color palette
 
-The service is free and allows about 30 requests a minute per IP address.
+The service is free and rate limited per IP address; see
+https://themesniffer.com/developers for the current limits.
 
 ## Data
 
 When you ask about a website, the website address you give is sent to the
 ThemeSniffer service at themesniffer.com, which fetches that public page and
 returns what it detected. Nothing else from your conversation is sent. If the
-ThemeSniffer connector isn't connected, Claude can instead do a best-effort
-manual check by reading the public page you named (and its theme stylesheet)
-with its own web tools; nothing is sent to ThemeSniffer then. The plugin
-itself runs no code on your computer and stores nothing. See the ThemeSniffer
-privacy policy at https://themesniffer.com/privacy for how the service handles
-requests.
+ThemeSniffer connector isn't connected, the assistant can instead do a
+best-effort manual check by reading the public page you named (and its theme
+stylesheet) with its own web tools; nothing is sent to ThemeSniffer then. The
+plugin itself runs no code on your computer and stores nothing. See the
+ThemeSniffer privacy policy at https://themesniffer.com/privacy for how the
+service handles requests.
 
 ## Limits
 

@@ -1,0 +1,20 @@
+{
+  "name": "themesniffer",
+  "interface": {
+    "displayName": "ThemeSniffer"
+  },
+  "plugins": [
+    {
+      "name": "themesniffer",
+      "source": {
+        "source": "local",
+        "path": "./plugins/themesniffer"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
