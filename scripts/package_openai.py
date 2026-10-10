@@ -108,14 +108,16 @@ def check(root):
     positive, negative = cases.get("positive", []), cases.get("negative", [])
     if len(positive) != 5 or len(negative) != 3:
         problems.append(f"review needs exactly 5 positive and 3 negative cases, has {len(positive)} and {len(negative)}")
+    # The portal rejects anything but a non-empty string in these fields
+    # (tools_triggered included: one string, not a list of tool names).
     for i, case in enumerate(positive):
         for key in ("description", "prompt", "tools_triggered", "expected_behavior"):
-            if not case.get(key):
-                problems.append(f"positive case {i + 1}: '{key}' is required")
+            if not isinstance(case.get(key), str) or not case[key].strip():
+                problems.append(f"positive case {i + 1}: '{key}' must be a non-empty string")
     for i, case in enumerate(negative):
         for key in ("description", "prompt"):
-            if not case.get(key):
-                problems.append(f"negative case {i + 1}: '{key}' is required")
+            if not isinstance(case.get(key), str) or not case[key].strip():
+                problems.append(f"negative case {i + 1}: '{key}' must be a non-empty string")
 
     mcp = json.loads((root / "mcp.json").read_text()).get("mcpServers", {})
     if len(mcp) != 1:
