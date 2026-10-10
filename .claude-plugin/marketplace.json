@@ -1,0 +1,17 @@
+{
+  "name": "themesniffer",
+  "owner": {
+    "name": "ThemeSniffer",
+    "url": "https://themesniffer.com"
+  },
+  "metadata": {
+    "description": "Claude plugins from ThemeSniffer for WordPress theme and plugin detection."
+  },
+  "plugins": [
+    {
+      "name": "themesniffer",
+      "source": "./plugins/themesniffer",
+      "description": "Find out which WordPress theme and plugins any website uses, through the ThemeSniffer connector."
+    }
+  ]
+}

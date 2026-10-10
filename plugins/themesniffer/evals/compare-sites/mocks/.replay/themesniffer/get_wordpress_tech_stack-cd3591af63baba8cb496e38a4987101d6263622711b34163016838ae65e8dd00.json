@@ -1,0 +1,9 @@
+{
+  "input": {
+    "url": "https://copperkettle-cafe.com"
+  },
+  "output": "{\"success\": true, \"url\": \"https://copperkettle-cafe.com/\", \"checkedAt\": \"2026-10-03T12:00:00.000Z\", \"isWordPress\": true, \"confidence\": \"high\", \"theme\": {\"name\": \"Blocksy\", \"slug\": \"blocksy\", \"inRepo\": true, \"nameSource\": \"style.css\", \"author\": \"CreativeThemes\"}, \"plugins\": [{\"slug\": \"elementor\", \"name\": \"Elementor\", \"category\": \"Page Builder\", \"known\": true, \"premium\": false}, {\"slug\": \"wordpress-seo\", \"name\": \"Yoast SEO\", \"category\": \"SEO\", \"known\": true, \"premium\": false}, {\"slug\": \"litespeed-cache\", \"name\": \"LiteSpeed Cache\", \"category\": \"Performance\", \"known\": true, \"premium\": false}, {\"slug\": \"contact-form-7\", \"name\": \"Contact Form 7\", \"category\": \"Forms\", \"known\": true, \"premium\": false}], \"hosting\": null, \"cdn\": null, \"server\": \"nginx\", \"poweredBy\": \"PHP/8.2.20\", \"performance\": {\"score\": 66, \"grade\": \"Fair\", \"serverResponseMs\": 640, \"ttfbRating\": \"moderate\"}, \"security\": {\"https\": true, \"hsts\": true, \"csp\": false, \"xFrameOptions\": true, \"xContentTypeOptions\": true}}",
+  "verdict": "ok",
+  "recordedAt": "2026-10-03T16:16:17.243Z",
+  "model": null
+}
