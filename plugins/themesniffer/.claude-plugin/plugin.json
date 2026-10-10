@@ -1,10 +1,10 @@
 {
   "name": "themesniffer",
   "displayName": "ThemeSniffer - WordPress Theme & Plugin Detector",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Find out which WordPress theme and plugins any website uses. Detects child and parent themes, page builders, SEO, caching, forms and e-commerce plugins through the ThemeSniffer connector.",
   "author": {
-    "name": "ThemeSniffer",
+    "name": "Ruslan Saifullin",
     "url": "https://themesniffer.com"
   },
   "homepage": "https://themesniffer.com",
