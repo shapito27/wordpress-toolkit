@@ -76,7 +76,7 @@ names `[A-Za-z0-9._-]` only.
 
 - `name`: **`themesniffer`** - permanent, lowercase, distinctive, ours.
   Becomes the command prefix (`/themesniffer:sniff`).
-- `displayName`: "ThemeSniffer - WordPress Theme & Plugin Detector".
+- `displayName`: "ThemeSniffer - WordPress Theme and Plugin Detector".
 - `author.name`: the ThemeSniffer owner / company, with `url`
   `https://themesniffer.com`.
 - Avoid "WordPress" as the plugin `name`: it is a trademark of the WordPress
@@ -92,7 +92,7 @@ names `[A-Za-z0-9._-]` only.
 ```json
 {
   "name": "themesniffer",
-  "displayName": "ThemeSniffer - WordPress Theme & Plugin Detector",
+  "displayName": "ThemeSniffer - WordPress Theme and Plugin Detector",
   "version": "0.1.0",
   "description": "Find out which WordPress theme and plugins any website uses. Detects child/parent themes, page builders, SEO, cache, e-commerce and security plugins through the ThemeSniffer connector.",
   "author": { "name": "ThemeSniffer", "url": "https://themesniffer.com" },
