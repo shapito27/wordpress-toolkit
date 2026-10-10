@@ -12,8 +12,7 @@ Claude (claude.ai, Cowork, Claude Code) and in ChatGPT and Codex.
 In Claude Code:
 
 ```
-/plugin marketplace add shapito27/wordpress-toolkit
-/plugin install themesniffer@themesniffer
+/plugin install themesniffer --marketplace shapito27/wordpress-toolkit
 ```
 
 On claude.ai or in Cowork: **Customize > Plugins > Add > Add marketplace**,
