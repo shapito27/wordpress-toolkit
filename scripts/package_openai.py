@@ -104,7 +104,11 @@ def check(root):
         if size and (size[0] != size[1] or size[0] < 48 or size[0] > 4096):
             problems.append(f"interface.{key}: {rel} is {size[0]}x{size[1]}, must be square, 48-4096 px")
 
-    cases = (openai.get("review") or {}).get("test_cases") or {}
+    review = openai.get("review") or {}
+    demo = review.get("demo_recording_url")
+    if not isinstance(demo, str) or not demo.startswith("https://"):
+        problems.append("review.demo_recording_url is required for MCP review (an https link reviewers can open)")
+    cases = review.get("test_cases") or {}
     positive, negative = cases.get("positive", []), cases.get("negative", [])
     if len(positive) != 5 or len(negative) != 3:
         problems.append(f"review needs exactly 5 positive and 3 negative cases, has {len(positive)} and {len(negative)}")
