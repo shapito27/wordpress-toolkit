@@ -28,8 +28,12 @@ No account, sign-in or API key is needed.
 
 **Claude:** install the plugin from the Claude plugin directory (or from this
 repository's marketplace), then open the plugin's **Connectors** tab and
-connect **ThemeSniffer**. In Claude Code the connector loads with the plugin;
-run `/mcp` to check that it is connected.
+connect **ThemeSniffer**. In Claude Code, install it in one step and the
+connector loads with the plugin; run `/mcp` to check that it is connected:
+
+```
+/plugin install themesniffer --marketplace shapito27/wordpress-toolkit
+```
 
 **ChatGPT and Codex:** install ThemeSniffer from the plugin directory (or add
 this repository as a Codex marketplace), then mention it with `@ThemeSniffer`

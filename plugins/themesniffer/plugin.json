@@ -1,13 +1,13 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "themesniffer",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Find out which WordPress theme and plugins any website uses. Detects child and parent themes, page builders, SEO, caching, forms and e-commerce plugins through the ThemeSniffer MCP server.",
   "author": {
     "name": "Ruslan Saifullin",
     "url": "https://themesniffer.com"
   },
-  "homepage": "https://themesniffer.com/developers",
+  "homepage": "https://themesniffer.com",
   "repository": "https://github.com/shapito27/wordpress-toolkit",
   "license": "MIT",
   "keywords": ["wordpress", "theme-detector", "plugin-detector", "competitor-research", "seo"],
