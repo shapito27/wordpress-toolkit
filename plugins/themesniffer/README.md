@@ -1,4 +1,4 @@
-# ThemeSniffer - WordPress Theme & Plugin Detector
+# ThemeSniffer - WordPress Theme and Plugin Detector
 
 Find out which WordPress theme and plugins any website uses, right from a
 conversation with your AI assistant. The plugin works in Claude (claude.ai,
